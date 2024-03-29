@@ -14,6 +14,8 @@ export class AppComponent {
   constructor(private readonly keycloakService: KeycloakService) {}
 
   login() {
-    this.keycloakService.login();
+    this.keycloakService.login({
+      redirectUri: 'http://localhost:4200/private'
+    });
   }
 }
