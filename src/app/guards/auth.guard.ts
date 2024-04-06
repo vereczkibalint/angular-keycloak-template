@@ -26,13 +26,11 @@ export const authGuard: CanMatchFn = async (route, segments): Promise<boolean | 
 
   // Allow the user to proceed if ALL of the required roles are present
   const authorized = requiredRoles.every((role) => roles.includes(role));
-  // Allow the user to proceed if ONE of the required roles is present
-  //const authorized = requiredRoles.some((role) => roles.includes(role));
 
   if (authorized) {
     return true;
   }
 
   // Display my custom HTTP 403 access denied page
-  return router.createUrlTree(['/access']);
+  return router.createUrlTree(['/access-denied']);
 };
