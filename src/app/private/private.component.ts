@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { KeycloakService } from 'keycloak-angular';
 
 @Component({
   selector: 'app-private',
@@ -9,9 +8,5 @@ import { KeycloakService } from 'keycloak-angular';
   styleUrl: './private.component.scss'
 })
 export class PrivateComponent {
-  constructor(private readonly keycloakService: KeycloakService) {}
-  
-  logout() {
-    this.keycloakService.logout('http://localhost:4200');
-  }
+
 }
