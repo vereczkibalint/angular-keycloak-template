@@ -11,7 +11,7 @@ export const authGuard: CanMatchFn = async (route, segments): Promise<boolean | 
 
   if (!authenticated) {
     await keycloakService.login({
-      redirectUri: 'http://localhost:4200/private',
+      redirectUri: 'http://localhost:4200/dashboard',
     });
   }
 

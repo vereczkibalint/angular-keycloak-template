@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { KeycloakService } from 'keycloak-angular';
 import { MenuItem } from 'primeng/api';
@@ -12,26 +12,28 @@ import { ButtonModule } from 'primeng/button';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   
-  userLoggedIn = signal<boolean>(false);
-
   items: MenuItem[] = [
     {
       label: 'Home',
-      icon: 'pi pi-home',
+      icon: 'pi pi-home'
+    },
+    {
+      label: 'My services',
+      icon: 'pi pi-tags'
+    },
+    {
+      label: 'Coupons',
+      icon: 'pi pi-gift'
     }
   ];
 
   constructor(private readonly keycloakService: KeycloakService) {}
 
-  ngOnInit(): void {
-    this.userLoggedIn.set(this.keycloakService.isLoggedIn());
-  }
-
   login() {
     this.keycloakService.login({
-      redirectUri: 'http://localhost:4200/private'
+      redirectUri: 'http://localhost:4200/dashboard'
     });
   }
 
