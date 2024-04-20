@@ -30,7 +30,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "src/lara-light-teal.scss",
+                "bundleName": "lara-light-teal",
+                "inject": false
+              },
+              {
+                "input": "src/lara-dark-teal.scss",
+                "bundleName": "lara-dark-teal",
+                "inject": false
+              }
             ],
             "scripts": []
           },

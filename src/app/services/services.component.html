@@ -1,0 +1,9 @@
+@if(services$ | async; as services) {
+    @if(services.length === 0) {
+        <h1>No services found!</h1>
+    } @else {
+        @for (service of services; track $index) {
+            <h1>{{service.name}}</h1>
+        }
+    }
+}
