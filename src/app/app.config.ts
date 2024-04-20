@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, ApplicationConfig, Injector } from '@angular/core';
+import { APP_INITIALIZER, ApplicationConfig } from '@angular/core';
 import { Router, provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
